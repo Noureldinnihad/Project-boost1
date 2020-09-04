@@ -26,11 +26,11 @@ if (Input.GetKey(KeyCode.Space))
 }
 if (Input.GetKey(KeyCode.A))
 {
-    
+            rigidbody.AddRelativeForce(Vector3.right);
 }
 if (Input.GetKey(KeyCode.D))
 {
-    
+            rigidbody.AddRelativeForce(Vector3.left);
 }
 
 
