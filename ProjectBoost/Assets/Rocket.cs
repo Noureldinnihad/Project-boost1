@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class Rocket : MonoBehaviour
@@ -21,8 +22,21 @@ public class Rocket : MonoBehaviour
         Rotation();
 
     }
+     void OnCollisionEnter(Collision collision)
+    {
+        switch (collision.gameObject.tag){
 
-  void Thrust()
+            case "Friendly":
+                print("ok");
+                break;
+            case "Dead":
+                print("Dead");
+                break;
+
+        }
+    }
+
+    void Thrust()
     {
         float thrustThisFrame = thrust * Time.deltaTime;
         if (Input.GetKey(KeyCode.Space))
